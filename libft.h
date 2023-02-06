@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nvillase <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/03 13:10:49 by nvillase          #+#    #+#             */
-/*   Updated: 2023/02/06 14:56:10 by nvillase         ###   ########.fr       */
+/*   Created: 2023/02/06 14:47:04 by nvillase          #+#    #+#             */
+/*   Updated: 2023/02/06 18:43:11 by nvillase         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-int	ft_isalnum(int c)
-{
-	if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z')
-		|| (c >= 'A' && c <= 'Z'))
-		return (1);
-	return (0);
-}
+# include <stdio.h>
+# include <strings.h>
+# include <stdlib.h>
 
-int	main(int ac, char **av)
-{
-	ac = ac;
-	if (ft_isalnum(*av[1]) == 1)
-	{
-		printf("<%c>est un caractere alphanumerique\n", *av[1]);
-		return (0);
-	}
-	printf("<%c>n est pas un caractere alphanumerique\n", *av[1]);
-	return (0);
-}
+#endif
