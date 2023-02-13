@@ -6,7 +6,7 @@
 #    By: nvillase <nvillase@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 13:57:32 by nvillase          #+#    #+#              #
-#    Updated: 2023/02/10 16:55:06 by nvillase         ###   ########.fr        #
+#    Updated: 2023/02/13 16:42:12 by nvillase         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,10 @@ SRCS =	ft_bzero.c \
 		ft_memmove.c \
 		ft_memset.c \
 		ft_strlen.c \
-		ft_strlcpy.c
+		ft_strlcpy.c \
+		ft_strlcat.c \
+		ft_toupper.c \
+		ft_tolower.c
 
 OBJS = $(SRCS:.c=.o)
 
