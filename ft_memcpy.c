@@ -6,7 +6,7 @@
 /*   By: nvillase <nvillase@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 11:36:48 by nvillase          #+#    #+#             */
-/*   Updated: 2023/02/09 14:49:29 by nvillase         ###   ########.fr       */
+/*   Updated: 2023/02/20 16:09:15 by nvillase         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	d = dest;
 	s = src;
 	i = 0;
+	if (!dest && !src)
+		return (dest);
 	while (i < n)
 	{
 		d[i] = s[i];
 		i++;
 	}
-	return (dest);
+	return (d);
 }

@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nvillase <nvillase@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nvillase <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/08 16:32:56 by nvillase          #+#    #+#             */
-/*   Updated: 2023/02/20 16:22:12 by nvillase         ###   ########.fr       */
+/*   Created: 2023/02/21 16:38:28 by nvillase          #+#    #+#             */
+/*   Updated: 2023/02/21 16:38:32 by nvillase         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	if (dest > src)
-	{
-		while (n--)
-			((char *)dest)[n] = ((char *)src)[n];
-	}
-	else
-		ft_memcpy(dest, src, n);
-	return (dest);
+	char	*s2;
+	size_t	debut;
+	size_t	fin;
+	size_t	len;
+
+	debut = 0;
+	len = ft_strlen(s1);
+	fin = len - 1;
+
+	while (debut <= len && ft_strchr(set, s1[debut]) != NULL)
+		debut++;
+	while (fin )
 }
