@@ -6,7 +6,7 @@
 #    By: nvillase <nvillase@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 13:57:32 by nvillase          #+#    #+#              #
-#    Updated: 2023/02/15 15:50:57 by nvillase         ###   ########.fr        #
+#    Updated: 2023/02/22 11:13:18 by nvillase         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,8 @@ SRCS =	ft_bzero.c \
 		ft_substr.c \
 		ft_strjoin.c \
 		ft_strjoin.c \
-		ft_strtrim.c
+		ft_strtrim.c \
+		ft_split.c
 
 OBJS = $(SRCS:.c=.o)
 
