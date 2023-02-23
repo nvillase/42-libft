@@ -6,13 +6,13 @@
 /*   By: nvillase <nvillase@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 11:10:56 by nvillase          #+#    #+#             */
-/*   Updated: 2023/02/22 16:01:59 by nvillase         ###   ########.fr       */
+/*   Updated: 2023/02/23 14:23:54 by nvillase         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_conte_mot(char const *s, char c)
+static int	ft_conte_mot(char const *s, char c)
 {
 	int		i;
 	int		j;
@@ -21,41 +21,32 @@ int	ft_conte_mot(char const *s, char c)
 	j = 0;
 	while (s[i])
 	{
-		while (s[i] == c && s[i])
+		if (s[i] == c && s[i])
 			i++;
-		if (s[i] != c)
+		else
 		{
-			i++;
 			j++;
+			while (s[i] != c && s[i])
+				i++;
 		}
-		while (s[i] != c && s[i])
-			i++;
 	}
 	return (j);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**ft_replace(const char *s, char **s2, char c)
 {
-	int		j;
-	char	**s2;
 	int		i;
-	int		h;
 	int		k;
+	int		h;
 
 	i = 0;
-	if (!s)
-		return (NULL);
-	j = ft_conte_mot(*s, c);
-	s2 = (char **) malloc ((j + 1) * sizeof(char *));
-	if (!s2)
-		return (NULL);
 	k = 0;
-	while (s[i])
+	while (s[i] && (k < ft_conte_mot(s, c)))
 	{
-		if (s[i] != c && s[i - 1] == c)
+		if (s[i] != c && ((i == 0) || s[i - 1] == c))
 		{
 			h = i;
-			while (s[i] != c)
+			while (s[i] && s[i] != c)
 				i++;
 			s2[k] = ft_substr(s, h, i - h);
 			k++;
@@ -64,4 +55,18 @@ char	**ft_split(char const *s, char c)
 	}
 	s2[k] = '\0';
 	return (s2);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		j;
+	char	**s2;
+
+	if (!s)
+		return (NULL);
+	j = ft_conte_mot(s, c);
+	s2 = (char **) malloc ((j + 1) * sizeof(char *));
+	if (!s2)
+		return (NULL);
+	return (ft_replace(s, s2, c));
 }
