@@ -6,7 +6,7 @@
 /*   By: nvillase <nvillase@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 11:10:56 by nvillase          #+#    #+#             */
-/*   Updated: 2023/02/23 14:23:54 by nvillase         ###   ########.fr       */
+/*   Updated: 2023/03/06 08:53:21 by nvillase         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static char	**ft_replace(const char *s, char **s2, char c)
 		}
 		i++;
 	}
-	s2[k] = '\0';
+	s2[k] = NULL;
 	return (s2);
 }
 
